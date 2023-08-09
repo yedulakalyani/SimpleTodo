@@ -1,8 +1,6 @@
-import {Component} from 'react'
-
-import TodoItem from '../TodoItem'
-
 import './index.css'
+import {Component} from 'react'
+import TodoItem from '../TodoItem'
 
 const initialTodosList = [
   {
@@ -39,7 +37,6 @@ const initialTodosList = [
   },
 ]
 
-//
 class SimpleTodos extends Component {
   state = {
     todoList: initialTodosList,
@@ -53,15 +50,16 @@ class SimpleTodos extends Component {
 
   render() {
     const {todoList} = this.state
+
     return (
-      <div className="bg">
-        <div className="todo">
-          <h1 className="heading">Simple Todos</h1>
-          <ul className="todo-list">
+      <div className="container">
+        <div className="card-container">
+          <h1 className="heading">SimpleTodos</h1>
+          <ul>
             {todoList.map(each => (
               <TodoItem
                 key={each.id}
-                todoDetails={each}
+                toDetails={each}
                 deleteTodo={this.deleteTodo}
               />
             ))}
